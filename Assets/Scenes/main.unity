@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4509704, g: 0.49936825, b: 0.5664788, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -587,7 +587,7 @@ MonoBehaviour:
   SurfacePlanePrefab: {fileID: 1000012533008156, guid: ba8fd2f43a0af54479574c6cff42d525,
     type: 2}
   MinArea: 0.025
-  drawPlanesMask: 0
+  drawPlanesMask: -1
   destroyPlanesMask: 0
 --- !u!114 &495073258
 MonoBehaviour:
@@ -733,7 +733,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 668114335}
-  - component: {fileID: 668114334}
   - component: {fileID: 668114333}
   - component: {fileID: 668114332}
   - component: {fileID: 668114331}
@@ -796,8 +795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ec997fd9a672da45864c837f2620db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectsToHideInPicture:
-  - {fileID: 0}
+  objectsToHideInPicture: []
 --- !u!114 &668114333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -808,18 +806,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 199f46660911c5b4aa8b2071a00ad318, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &668114334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114832346461243410, guid: 0567b26144a6e384cb270ee433294ee0,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 668114328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a924182974adec4fb9727babafa8147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &668114335
@@ -1889,6 +1875,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2026522912}
+  - component: {fileID: 2026522911}
+  - component: {fileID: 2026522913}
   m_Layer: 0
   m_Name: MainObjects
   m_TagString: Untagged
@@ -1896,6 +1884,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2026522911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2026522910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0cda594f742958458087bfc84fe4307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sharing: {fileID: 234530688}
+  SpectatorViewManager: {fileID: 2091929711}
+  Anchor: {fileID: 668114328}
 --- !u!4 &2026522912
 Transform:
   m_ObjectHideFlags: 0
@@ -1916,6 +1918,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2026522913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2026522910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a924182974adec4fb9727babafa8147, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2049362361
 GameObject:
   m_ObjectHideFlags: 0
@@ -2031,7 +2044,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2091929712
 Transform:
   m_ObjectHideFlags: 0
@@ -2053,7 +2066,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2091929711}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fea3e70ae0dd35348851dfcbf3d03e29, type: 3}
   m_Name: 

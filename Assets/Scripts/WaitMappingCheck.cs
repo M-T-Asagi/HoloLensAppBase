@@ -1,11 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class WaitMappingCheck : MonoBehaviour {
+public class WaitMappingCheck : MonoBehaviour
+{
 
-	void OnMappingChecked()
+    void OnMappingChecked()
     {
-        GameObject.Find("HololensBase").GetComponent<BaseStates>().MappingState = true;
+        BaseStates.Instance.MappingState = true;
     }
 }

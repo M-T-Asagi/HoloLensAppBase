@@ -466,7 +466,7 @@ namespace SpectatorView
             }
         }
 
-#region HelperFunctionsForWriting
+        #region HelperFunctionsForWriting
         void AppendTransform(NetworkOutMessage msg, Vector3 position, Quaternion rotation)
         {
             AppendVector3(msg, position);
@@ -509,9 +509,9 @@ namespace SpectatorView
             msg.WriteArray(ipBytes, (uint)byteSize);
         }
 
-#endregion HelperFunctionsForWriting
+        #endregion HelperFunctionsForWriting
 
-#region HelperFunctionsForReading
+        #region HelperFunctionsForReading
 
         public Vector3 ReadVector3(NetworkInMessage msg)
         {
@@ -532,6 +532,6 @@ namespace SpectatorView
             return System.Text.Encoding.ASCII.GetString(ipData);
         }
 
-#endregion HelperFunctionsForReading
+        #endregion HelperFunctionsForReading
     }
 }

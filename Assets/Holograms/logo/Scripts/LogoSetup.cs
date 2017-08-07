@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LogoSetup : MonoBehaviour {
+public class LogoSetup : MonoBehaviour
+{
     const float DEFAULT_ALPHA = 0.5f;
     const float DISTANCE = 2.0f;
 
@@ -16,41 +17,40 @@ public class LogoSetup : MonoBehaviour {
     bool LOGO_EXISTS = true;
 
     // Use this for initialization
-    void Start () {
-        baseStates = GameObject.Find("HololensBase").GetComponent<BaseStates>();
+    void Start()
+    {
+        baseStates = BaseStates.Instance;
         mainCamera = GameObject.Find("Main Camera");
 
         LOGO_EXISTS = logoImage != null;
 
-        if(LOGO_EXISTS)
+        if (LOGO_EXISTS)
         {
             color = logoImage.color;
             color.a = DEFAULT_ALPHA;
             logoImage.color = color;
         }
     }
-	
-	// Update is called once per frame
-	void Update () {
-        if(LOGO_EXISTS)
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (baseStates.MappingState)
         {
-            if (baseStates.MappingState)
+            if (color.a > 0)
             {
-                if (color.a > 0)
-                {
-                    color.a -= 0.1f;
-                    if(logoImage != null)
-                        logoImage.color = color;
-                }
-                else
-                {
-                    Destroy(gameObject);
-                }
+                color.a -= 0.1f;
+                if (LOGO_EXISTS)
+                    logoImage.color = color;
+            }
+            else
+            {
+                Destroy(gameObject);
             }
         }
-        
+
         Vector3 center = mainCamera.transform.position + mainCamera.transform.TransformDirection(Vector3.forward) * DISTANCE;
         this.transform.position = center;
         this.transform.rotation = mainCamera.transform.rotation;
-	}
+    }
 }

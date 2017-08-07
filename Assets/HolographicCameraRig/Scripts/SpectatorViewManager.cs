@@ -1,10 +1,7 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License. See LICENSE in the project root for license information.
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using HoloToolkit.Unity;
 using HoloToolkit.Sharing;
 
 namespace SpectatorView
@@ -29,7 +26,7 @@ namespace SpectatorView
         public string SpectatorViewIP = string.Empty;
         [SerializeField]
         [Tooltip("The IP of the computer running the HoloToolkit Sharing Service.  This must be on the same subnet as local PC and the spectator view rig.")]
-        string SharingServiceIP = string.Empty;
+        public string SharingServiceIP = string.Empty;
 
         [Header("Optional")]
         [SerializeField]

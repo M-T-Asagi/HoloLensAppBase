@@ -1,22 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using HoloToolkit.Sharing;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class AppStartManager : MonoBehaviour {
+public class PreManager : MonoBehaviour
+{
+    const string MAIN_SCENE_NAME = "main";
+
     GameObject dialog = null;
     int nowDialogNumber = 0;
     bool dialogWorks = true;
-
     bool sharing = false;
 
-    // Use this for initialization
-	void Start () {
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		switch(nowDialogNumber)
+    // Update is called once per frame
+    void Update()
+    {
+        switch (nowDialogNumber)
         {
             case 0:
                 {
@@ -74,15 +71,15 @@ public class AppStartManager : MonoBehaviour {
                 break;
         }
 
-        if(!dialogWorks)
+        if (!dialogWorks)
         {
             StartApp();
             Destroy(this);
         }
-	}
+    }
 
     void StartApp()
     {
-        transform.Find("ConnectorBased").gameObject.SetActive(true);
+        SceneManager.LoadScene("main", LoadSceneMode.Additive);
     }
 }

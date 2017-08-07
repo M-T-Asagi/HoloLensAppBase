@@ -23,6 +23,14 @@ public class AppStateManager : Singleton<AppStateManager>
     /// </summary>
     public AppState CurrentAppState { get; set; }
 
+    GameObject surfaceMeshsToPlanesObject;
+
+    private void Awake()
+    {
+        surfaceMeshsToPlanesObject = GameObject.Find("SurfaceMeshesToPlanes");
+        surfaceMeshsToPlanesObject.SetActive(false);
+    }
+
     void Start()
     {
 
@@ -54,6 +62,7 @@ public class AppStateManager : Singleton<AppStateManager>
                     SpatialMappingManager.Instance.gameObject.SetActive(true);
                     SpatialMappingManager.Instance.DrawVisualMeshes = true;
                     SpatialMappingManager.Instance.StartObserver();
+                    surfaceMeshsToPlanesObject.SetActive(true);
                 }
                 break;
             case AppState.WaitingForStageTransform:
