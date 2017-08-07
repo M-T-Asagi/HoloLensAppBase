@@ -10,7 +10,7 @@ public class CheckMappingState : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        baseStates = GameObject.Find("HololensBase").GetComponent<BaseStates>();
+        baseStates = BaseStates.Instance;
     }
 
     // Update is called once per frame
