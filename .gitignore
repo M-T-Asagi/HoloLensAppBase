@@ -32,3 +32,8 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+
+# Asagi Added
+
+packages
